@@ -94,35 +94,186 @@ const labs = {
   /* =========================
      LAB ACT 1 (PLACEHOLDER)
      ========================= */
-  lab1: {
-    easy: [
-      // 🔴 PASTE EASY MCQ HERE
-    ],
-    difficult: [
-      // 🔴 PASTE DIFFICULT MCQ HERE
-    ]
-  },
+ lab1: {
+
+  /* =========================
+     EASY LEVEL (30 ITEMS)
+     ========================= */
+  easy: [
+
+    /* MCQ (10) */
+    {type:"mcq", q:"What does fish growth primarily indicate?", options:["Migration patterns","Development and health","Color variation","Feeding time"], a:1},
+    {type:"mcq", q:"Which environmental factor affects fish growth?", options:["Age","Size","Temperature","Sexual maturity"], a:2},
+    {type:"mcq", q:"Which variable is easier to measure?", options:["Weight","Length","Volume","Density"], a:1},
+    {type:"mcq", q:"Length-weight relationship formula is:", options:["W=a+bL","W=aL²","W=aL^b","W=L/a"], a:2},
+    {type:"mcq", q:"Parameter b represents:", options:["Color","Body shape/growth pattern","Age","Temperature"], a:1},
+    {type:"mcq", q:"Condition factor indicates:", options:["Age","Health","Habitat","Migration"], a:1},
+    {type:"mcq", q:"When b=3 growth is:", options:["Allometric","Isometric","Linear","Random"], a:1},
+    {type:"mcq", q:"LWR is:", options:["Linear","Constant","Nonlinear","Cyclic"], a:2},
+    {type:"mcq", q:"Heteroscedasticity means:", options:["Equal variance","Increasing variance","No variance","Constant values"], a:1},
+    {type:"mcq", q:"Log transformation makes relationship:", options:["Curved","Random","Linear","Undefined"], a:2},
+
+    /* TRUE/FALSE (10) */
+    {type:"tf", q:"Growth includes increases in length and weight.", a:true},
+    {type:"tf", q:"Oxygen has no effect on fish growth.", a:false},
+    {type:"tf", q:"LWR helps estimate biomass.", a:true},
+    {type:"tf", q:"Weight is more stable than length.", a:false},
+    {type:"tf", q:"Parameter a relates to fish heaviness.", a:true},
+    {type:"tf", q:"Fish always maintain same shape as they grow.", a:false},
+    {type:"tf", q:"b ≈ 3 is based on volume.", a:true},
+    {type:"tf", q:"Large fish show more variation.", a:true},
+    {type:"tf", q:"Log transformation creates heteroscedasticity.", a:false},
+    {type:"tf", q:"LWR is useful in fisheries management.", a:true},
+
+    /* IDENTIFICATION (10) */
+    {type:"id", q:"Indicator of fish health and plumpness", a:"condition factor"},
+    {type:"id", q:"Mathematical relationship between length and weight", a:"length-weight relationship"},
+    {type:"id", q:"Parameter representing body shape", a:"b"},
+    {type:"id", q:"Parameter representing scaling or heaviness", a:"a"},
+    {type:"id", q:"Growth type when b = 3", a:"isometric growth"},
+    {type:"id", q:"Growth type when b ≠ 3", a:"allometric growth"},
+    {type:"id", q:"Increasing variance with size", a:"heteroscedasticity"},
+    {type:"id", q:"Equal variance after transformation", a:"homoscedasticity"},
+    {type:"id", q:"Curved relationship before transformation", a:"nonlinear relationship"},
+    {type:"id", q:"Process that converts nonlinear data into linear form", a:"log transformation"}
+
+  ],
+
+  /* =========================
+     DIFFICULT LEVEL (30 ITEMS)
+     ========================= */
+  difficult: [
+
+    /* MCQ (10) */
+    {type:"mcq", q:"Why is length preferred over weight in field measurements?", options:["Easier to estimate visually","More stable and accurate","Less important","Requires no tools"], a:1},
+    {type:"mcq", q:"What does heteroscedasticity imply in LWR data?", options:["Equal spread across sizes","Larger fish have greater variance","Smaller fish vary more","No relationship exists"], a:1},
+    {type:"mcq", q:"The exponent b theoretically equals 3 because:", options:["Fish grow linearly","Weight depends on area","Volume scales with length³","Length equals weight"], a:2},
+    {type:"mcq", q:"What transformation linearizes LWR?", options:["Squaring","Logarithmic transformation","Division","Inversion"], a:1},
+    {type:"mcq", q:"After log transformation variance becomes:", options:["Increasing","Decreasing","Uniform","Random"], a:2},
+    {type:"mcq", q:"Parameter a is best described as:", options:["Growth rate","Scaling coefficient","Shape factor","Error term"], a:1},
+    {type:"mcq", q:"Deviation from b=3 indicates:", options:["Isometric growth","Allometric growth","Linear growth","Static growth"], a:1},
+    {type:"mcq", q:"Main purpose of log transformation:", options:["Increase variability","Simplify visualization","Enable regression","Remove data"], a:2},
+    {type:"mcq", q:"Raw LWR data is:", options:["Linear","Curved and heteroscedastic","Constant","Random"], a:1},
+    {type:"mcq", q:"Fish weight variation in large fish is due to:", options:["Eye color","Feeding history","Fin number","Scale color"], a:1},
+
+    /* TRUE/FALSE (10) */
+    {type:"tf", q:"Biomass can be estimated using LWR.", a:true},
+    {type:"tf", q:"Parameter b defines growth scaling.", a:true},
+    {type:"tf", q:"All fish species have identical LWR.", a:false},
+    {type:"tf", q:"Geography affects LWR.", a:true},
+    {type:"tf", q:"Weight is unaffected by reproduction.", a:false},
+    {type:"tf", q:"Small fish show more variability.", a:false},
+    {type:"tf", q:"Log transformation creates linear relationship.", a:true},
+    {type:"tf", q:"Homoscedasticity means equal variance.", a:true},
+    {type:"tf", q:"LWR is irrelevant in fisheries.", a:false},
+    {type:"tf", q:"Season affects condition factor.", a:true},
+
+    /* IDENTIFICATION (10) */
+    {type:"id", q:"Measure of fish health using weight-length ratio", a:"condition factor"},
+    {type:"id", q:"Variance increases with size", a:"heteroscedasticity"},
+    {type:"id", q:"Equal variance condition", a:"homoscedasticity"},
+    {type:"id", q:"Mathematical form of LWR", a:"power function"},
+    {type:"id", q:"Exponent describing growth", a:"b"},
+    {type:"id", q:"Coefficient for scaling", a:"a"},
+    {type:"id", q:"Growth where shape changes", a:"allometric growth"},
+    {type:"id", q:"Growth where shape is constant", a:"isometric growth"},
+    {type:"id", q:"Method after transformation", a:"linear regression"},
+    {type:"id", q:"Curved raw dataset pattern", a:"nonlinear relationship"}
+
+  ]
+}
 
   /* =========================
      LAB ACT 2 (YOUR CURRENT CONTENT)
      ========================= */
-  lab2: {
-    easy: [
-      {q:"What is the function of the snout?", options:["Swimming propulsion","Sensory detection and feeding location","Waste removal","Breathing control"], a:1},
-      {q:"What does the operculum do?", options:["Moves the tail","Covers and protects the gills","Stores fat","Controls reproduction"], a:1},
-      {q:"The lateral line is used for:", options:["Digestion","Detecting water movement and vibrations","Reproduction","Color change"], a:1},
-      {q:"Which fin is mainly used for propulsion?", options:["Pectoral","Pelvic","Caudal","Anal"], a:2},
-      {q:"What is the shape of a fusiform body?", options:["Flattened","Torpedo-shaped","Round","Snake-like"], a:1},
-      {q:"Which mouth position is typical for surface feeders?", options:["Inferior","Subterminal","Superior","Terminal"], a:2},
-      {q:"Function of anal fin?", options:["Feeding","Stability","Breathing","Sensing"], a:1},
-      {q:"Which fin helps steering?", options:["Caudal","Pectoral","Dorsal","Anal"], a:1},
-      {q:"Function of pharyngeal jaws?", options:["Capture prey","Grinding food","Swimming","Sensing"], a:1},
-      {q:"Snake-like body shape?", options:["Globiform","Compressed","Anguilliform","Fusiform"], a:2}
-    ],
-    difficult: [
-      // (you can also paste later if needed)
-    ]
-  },
+lab2: {
+
+  /* =========================
+     EASY LEVEL (30 ITEMS)
+     ========================= */
+  easy: [
+
+    /* MCQ (10) */
+    {type:"mcq", q:"What is the function of the snout?", options:["Swimming propulsion","Sensory detection and feeding location","Waste removal","Breathing control"], a:1},
+    {type:"mcq", q:"What does the operculum do?", options:["Moves the tail","Covers and protects the gills","Stores fat","Controls reproduction"], a:1},
+    {type:"mcq", q:"The lateral line is used for:", options:["Digestion","Detecting water movement and vibrations","Reproduction","Color change"], a:1},
+    {type:"mcq", q:"Which fin is mainly used for propulsion?", options:["Pectoral fin","Pelvic fin","Caudal fin","Anal fin"], a:2},
+    {type:"mcq", q:"What is the shape of a fusiform body?", options:["Flattened sideways","Torpedo-shaped","Round","Snake-like"], a:1},
+    {type:"mcq", q:"Which mouth position is typical for surface feeders?", options:["Inferior","Subterminal","Superior","Terminal"], a:2},
+    {type:"mcq", q:"What is the function of the anal fin?", options:["Feeding","Stability during swimming","Breathing","Sensing"], a:1},
+    {type:"mcq", q:"Which fin helps with steering and turning?", options:["Caudal fin","Pectoral fin","Dorsal fin","Anal fin"], a:1},
+    {type:"mcq", q:"What is the function of pharyngeal jaws?", options:["Capture prey","Grind and process food","Swimming","Sensory detection"], a:1},
+    {type:"mcq", q:"Which body shape is snake-like?", options:["Globiform","Compressed","Anguilliform","Fusiform"], a:2},
+
+    /* TRUE / FALSE (10) */
+    {type:"tf", q:"The cheek protects internal head structures.", a:true},
+    {type:"tf", q:"The caudal peduncle is used for swimming force transfer.", a:true},
+    {type:"tf", q:"The lateral line detects vibrations in water.", a:true},
+    {type:"tf", q:"Pelvic fins are only for feeding.", a:false},
+    {type:"tf", q:"Spiny rays are flexible structures.", a:false},
+    {type:"tf", q:"Depressed body shapes are flattened side-to-side.", a:false},
+    {type:"tf", q:"Inferior mouths are found in bottom feeders.", a:true},
+    {type:"tf", q:"The nape supports head movement.", a:true},
+    {type:"tf", q:"The anus is used for digestion of food.", a:false},
+    {type:"tf", q:"Rounded caudal fins provide maneuverability.", a:true},
+
+    /* IDENTIFICATION (10) */
+    {type:"id", q:"Narrow region connecting body to tail", a:"caudal peduncle"},
+    {type:"id", q:"Sensory structure along fish side", a:"lateral line"},
+    {type:"id", q:"Bone covering the gills", a:"operculum"},
+    {type:"id", q:"Main source of propulsion", a:"caudal fin"},
+    {type:"id", q:"Bottom-facing mouth type", a:"inferior mouth"},
+    {type:"id", q:"Snake-like body shape", a:"anguilliform"},
+    {type:"id", q:"Upper neck region behind the head", a:"nape"},
+    {type:"id", q:"Flexible fin rays", a:"soft rays"},
+    {type:"id", q:"Jaw that extends outward", a:"protrusible jaws"},
+    {type:"id", q:"Feeding and grinding structure in throat", a:"pharyngeal jaws"}
+
+  ],
+
+  /* =========================
+     DIFFICULT LEVEL (30 ITEMS)
+     ========================= */
+  difficult: [
+
+    /* MCQ (10) */
+    {type:"mcq", q:"Function of branchiostegals?", options:["Feeding","Supporting gill membranes","Swimming","Vision"], a:1},
+    {type:"mcq", q:"Pelvic fin position under pectoral?", options:["Abdominal","Thoracic","Jugular","Mental"], a:1},
+    {type:"mcq", q:"Best caudal fin for sustained swimming?", options:["Rounded","Forked","Lunate","Truncate"], a:2},
+    {type:"mcq", q:"Function of caudal peduncle?", options:["Feeding","Force transfer","Sensing","Respiration"], a:1},
+    {type:"mcq", q:"Upward mouth type?", options:["Inferior","Subterminal","Superior","Terminal"], a:2},
+    {type:"mcq", q:"Function of dentary bone?", options:["Upper jaw","Lower jaw bite","Gill protection","Swimming"], a:1},
+    {type:"mcq", q:"Fast swimming body shape?", options:["Globiform","Compressed","Fusiform","Depressed"], a:2},
+    {type:"mcq", q:"Fin that prevents rolling?", options:["Caudal","Anal","Pectoral","Pelvic"], a:1},
+    {type:"mcq", q:"Heterocercal fin feature?", options:["Equal lobes","No lobes","Upper larger","Symmetrical"], a:2},
+    {type:"mcq", q:"Function of maxilla?", options:["Swimming","Mouth support","Sensing","Tail motion"], a:1},
+
+    /* TRUE / FALSE (10) */
+    {type:"tf", q:"Isthmus separates gill regions.", a:true},
+    {type:"tf", q:"Nape is near tail.", a:false},
+    {type:"tf", q:"Compressed bodies are reef adapted.", a:true},
+    {type:"tf", q:"Jugular pelvic fins are common.", a:false},
+    {type:"tf", q:"Soft rays are flexible.", a:true},
+    {type:"tf", q:"Lateral line detects only chemicals.", a:false},
+    {type:"tf", q:"Protrusible jaws help capture prey.", a:true},
+    {type:"tf", q:"Depressed bodies are top-bottom flattened.", a:true},
+    {type:"tf", q:"Dorsal fins have spiny and soft regions.", a:true},
+    {type:"tf", q:"Inferior mouths are surface feeders.", a:false},
+
+    /* IDENTIFICATION (10) */
+    {type:"id", q:"Dorsal fin with separated regions", a:"notched dorsal fin"},
+    {type:"id", q:"Pelvic fin near chin", a:"mental pelvic position"},
+    {type:"id", q:"Bottom feeding mouth", a:"inferior mouth"},
+    {type:"id", q:"Upper jaw supporting bone", a:"maxilla"},
+    {type:"id", q:"Fin used for steering and braking", a:"pectoral fin"},
+    {type:"id", q:"Bottom dwelling body shape", a:"depressed body"},
+    {type:"id", q:"Crescent-shaped caudal fin", a:"lunate caudal fin"},
+    {type:"id", q:"Gill covering structure", a:"operculum"},
+    {type:"id", q:"Throat jaw structure", a:"pharyngeal jaws"},
+    {type:"id", q:"Straight-edged tail fin", a:"truncate caudal fin"}
+
+  ]
+}
 
   /* =========================
      LAB ACT 3 (PLACEHOLDER)
