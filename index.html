@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab Acts Mock Exams</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      text-align: center;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      font-size: 22px;
+    }
+
+    .menu button {
+      display: block;
+      width: 220px;
+      margin: 10px auto;
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .option {
+      display: block;
+      margin: 10px;
+      padding: 10px;
+      background: #eee;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .correct { background: #a8f0a8 !important; }
+    .wrong { background: #f7a8a8 !important; }
+
+    button { padding: 10px 15px; margin-top: 10px; }
+    .hidden { display: none; }
+  </style>
+</head>
+
+<body>
+
+<header>Lab Acts Mock Exam System</header>
+
+<div class="menu" id="home">
+  <button onclick="startLab('lab1','easy')">Lab Act 1</button>
+  <button onclick="startLab('lab2','easy')">Lab Act 2 - Easy</button>
+  <button onclick="startLab('lab2','difficult')">Lab Act 2 - Difficult</button>
+  <button onclick="startLab('lab3','easy')">Lab Act 3</button>
+  <button onclick="startLab('lab4','easy')">Lab Act 4</button>
+</div>
+
+<div id="quiz" class="card hidden">
+  <h3 id="progress"></h3>
+  <p id="question"></p>
+  <div id="options"></div>
+  <p id="feedback"></p>
+  <button id="nextBtn" onclick="nextQuestion()" class="hidden">Next</button>
+</div>
+
+<div id="result" class="card hidden">
+  <h2>Exam Finished!</h2>
+  <p id="score"></p>
+  <button onclick="location.reload()">Back to Home</button>
+</div>
+
+<script>
+let current = 0;
+let score = 0;
+let questions = [];
+let selectedLab = "";
+
+/* =========================================================
+   🧠 LAB DATA STORAGE (PASTE NEW LAB ACTS HERE)
+   ========================================================= */
+
+const labs = {
+
+  /* =========================
+     LAB ACT 1 (PLACEHOLDER)
+     ========================= */
+  lab1: {
+    easy: [
+      // 🔴 PASTE EASY MCQ HERE
+    ],
+    difficult: [
+      // 🔴 PASTE DIFFICULT MCQ HERE
+    ]
+  },
+
+  /* =========================
+     LAB ACT 2 (YOUR CURRENT CONTENT)
+     ========================= */
+  lab2: {
+    easy: [
+      {q:"What is the function of the snout?", options:["Swimming propulsion","Sensory detection and feeding location","Waste removal","Breathing control"], a:1},
+      {q:"What does the operculum do?", options:["Moves the tail","Covers and protects the gills","Stores fat","Controls reproduction"], a:1},
+      {q:"The lateral line is used for:", options:["Digestion","Detecting water movement and vibrations","Reproduction","Color change"], a:1},
+      {q:"Which fin is mainly used for propulsion?", options:["Pectoral","Pelvic","Caudal","Anal"], a:2},
+      {q:"What is the shape of a fusiform body?", options:["Flattened","Torpedo-shaped","Round","Snake-like"], a:1},
+      {q:"Which mouth position is typical for surface feeders?", options:["Inferior","Subterminal","Superior","Terminal"], a:2},
+      {q:"Function of anal fin?", options:["Feeding","Stability","Breathing","Sensing"], a:1},
+      {q:"Which fin helps steering?", options:["Caudal","Pectoral","Dorsal","Anal"], a:1},
+      {q:"Function of pharyngeal jaws?", options:["Capture prey","Grinding food","Swimming","Sensing"], a:1},
+      {q:"Snake-like body shape?", options:["Globiform","Compressed","Anguilliform","Fusiform"], a:2}
+    ],
+    difficult: [
+      // (you can also paste later if needed)
+    ]
+  },
+
+  /* =========================
+     LAB ACT 3 (PLACEHOLDER)
+     ========================= */
+  lab3: {
+    easy: [
+      // 🔴 PASTE HERE
+    ],
+    difficult: [
+      // 🔴 PASTE HERE
+    ]
+  },
+
+  /* =========================
+     LAB ACT 4 (PLACEHOLDER)
+     ========================= */
+  lab4: {
+    easy: [
+      // 🔴 PASTE HERE
+    ],
+    difficult: [
+      // 🔴 PASTE HERE
+    ]
+  }
+};
+
+/* =========================================================
+   🧠 QUIZ ENGINE (DO NOT EDIT BELOW UNLESS NECESSARY)
+   ========================================================= */
+
+function startLab(lab, level) {
+  selectedLab = lab;
+  current = 0;
+  score = 0;
+
+  questions = labs[lab][level];
+
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+
+  showQuestion();
+}
+
+function showQuestion() {
+  document.getElementById("feedback").innerText = "";
+  document.getElementById("nextBtn").classList.add("hidden");
+
+  if (current >= questions.length) return showResult();
+
+  let q = questions[current];
+
+  document.getElementById("progress").innerText =
+    `Question ${current + 1} / ${questions.length}`;
+
+  document.getElementById("question").innerText = q.q;
+
+  let optDiv = document.getElementById("options");
+  optDiv.innerHTML = "";
+
+  q.options.forEach((opt, i) => {
+    let btn = document.createElement("div");
+    btn.className = "option";
+    btn.innerText = opt;
+
+    btn.onclick = () => checkAnswer(i, q.a, btn);
+
+    optDiv.appendChild(btn);
+  });
+}
+
+function checkAnswer(i, correct, btn) {
+  let options = document.querySelectorAll(".option");
+
+  options.forEach(o => o.onclick = null);
+
+  if (i === correct) {
+    btn.classList.add("correct");
+    document.getElementById("feedback").innerText = "Correct!";
+    score++;
+  } else {
+    btn.classList.add("wrong");
+    options[correct].classList.add("correct");
+    document.getElementById("feedback").innerText = "Wrong!";
+  }
+
+  document.getElementById("nextBtn").classList.remove("hidden");
+}
+
+function nextQuestion() {
+  current++;
+  showQuestion();
+}
+
+function showResult() {
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("result").classList.remove("hidden");
+
+  document.getElementById("score").innerText =
+    `You got ${score} / ${questions.length}`;
+}
+</script>
+
+</body>
+</html>
